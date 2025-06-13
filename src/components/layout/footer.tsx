@@ -172,7 +172,7 @@ export default async function Footer() {
                         </Link>
                     )}
                     {socials?.twitterUrl && socials.twitterUrl !== '#' && (
-                        <Link href={#} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors duration-300" aria-label="Twitter">
+                        <Link href={socials.twitterUrl} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors duration-300" aria-label="Twitter">
                         <Twitter size={24} />
                         </Link>
                     )}

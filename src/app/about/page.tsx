@@ -119,7 +119,7 @@ export default async function AboutPage() {
             </div>
             <div className="hidden md:block relative aspect-video">
                <Image
-                  src={pageContent.missionImageUrl}
+                  src="/public/our_mission.png"
                   alt={pageContent.missionTitle || "ByteBrusters' Mission"}
                   fill
                   data-ai-hint={pageContent.missionImageAiHint || "focused goals"}
