@@ -187,7 +187,7 @@ export default async function Footer() {
                         </Link>
                     )}
                     {socials?.instagramUrl && socials.instagramUrl !== '#' && (
-                        <Link href={socials.instagramUrl} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors duration-300" aria-label="Instagram">
+                        <Link href="https://www.instagram.com/webcraftingexpert_/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors duration-300" aria-label="Instagram">
                         <Instagram size={24} />
                         </Link>
                     )}
