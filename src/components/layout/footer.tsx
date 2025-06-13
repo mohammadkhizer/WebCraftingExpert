@@ -81,7 +81,7 @@ export default async function Footer() {
       id: 'default-settings',
       siteTitle: 'WebCraftingExperts',
       siteDescription: '',
-      contactEmail: 'bytebrusters1115@gmail.com',
+      contactEmail: 'webcraftingexpert@gmail.com',
       footerPhoneNumber: '+91 9510865561',
       footerTagline: 'Crafting digital excellence.',
       footerCopyright: `© ${new Date().getFullYear()} WebCraftingExperts. All rights reserved.`,
