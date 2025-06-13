@@ -1,0 +1,190 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --black: #212529; /* User defined, kept for selection style */
+    
+    /* Dark Theme (Default) */
+    --background: 0 0% 14%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 20%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 14%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 234 100% 76%; /* #8490FF */
+    --primary-foreground: 0 0% 98%; 
+    --secondary: 15 41% 31%; /* Corresponds to user's --brown: #6F3D2E */
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 25%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 25 54% 62%; /* Corresponds to user's --text-brown: #D69667 */
+    --accent-foreground: 0 0% 14%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 25%;
+    --input: 0 0% 17%;
+    --ring: 234 100% 76%; /* #8490FF */
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 10%; 
+    --sidebar-foreground: 0 0% 85%;
+    --sidebar-primary: 234 100% 76%; 
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 234 100% 76%; 
+    --sidebar-active-background: 234 100% 76%; 
+    --sidebar-active-foreground: 0 0% 98%;   
+
+    /* Gradient for Dark Theme (Old Purple to Dark Accent) */
+    --gradient-main: linear-gradient(to right, hsl(253, 78%, 54%), hsl(var(--accent)));
+  }
+
+  .light {
+    --background: 225 50% 94%; /* #E3EBF8 */
+    --foreground: 223 57% 22%; /* #1B2E59 */
+    --card: 0 0% 100%; /* #FFFFFF */
+    --card-foreground: 223 57% 22%; /* #1B2E59 */
+    --popover: 0 0% 100%; /* #FFFFFF */
+    --popover-foreground: 223 57% 22%; /* #1B2E59 */
+    --primary: 217 98% 52%; /* #0D6EFD */
+    --primary-foreground: 0 0% 100%; /* #FFFFFF */
+    --secondary: 218 46% 46%; /* #4064AC */
+    --secondary-foreground: 0 0% 100%; /* #FFFFFF */
+    --muted: 220 71% 95%; /* #E6EEFB */
+    --muted-foreground: 217 8% 52%; /* #727885 */
+    --accent: 45 98% 60%; /* #FDC330 */
+    --accent-foreground: 223 57% 22%; /* #1B2E59 */
+    --destructive: 0 100% 50%; /* #FF0000 */
+    --destructive-foreground: 0 0% 100%; /* #FFFFFF */
+    --border: 219 17% 77%; /* #BBC1CE */
+    --input: 220 71% 95%; /* #E6EEFB */
+    --ring: 217 98% 52%; /* #0D6EFD */
+
+    --sidebar-background: 0 0% 100%; /* #FFFFFF */
+    --sidebar-foreground: 223 57% 22%; /* #1B2E59 */
+    --sidebar-primary: 217 98% 52%; /* #0D6EFD */
+    --sidebar-primary-foreground: 0 0% 100%; /* #FFFFFF */
+    --sidebar-accent: 220 71% 95%; /* #E6EEFB */
+    --sidebar-accent-foreground: 223 57% 22%; /* #1B2E59 */
+    --sidebar-border: 219 17% 77%; /* #BBC1CE */
+    --sidebar-ring: 217 98% 52%; /* #0D6EFD */
+    --sidebar-active-background: 217 98% 52%; /* #0D6EFD */
+    --sidebar-active-foreground: 0 0% 100%; /* #FFFFFF */
+
+    /* Gradient for Light Theme (Primary Blue to Accent Yellow) */
+    --gradient-main: linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent)));
+  }
+
+  ::selection {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    text-shadow: var(--black) 0 0 2px; /* Assuming --black is defined in :root */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-primary-sans);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary-sans);
+  }
+
+  /* Custom Scrollbar Styling for Webkit Browsers */
+  ::-webkit-scrollbar {
+    width: 10px; /* Width of the entire scrollbar */
+    height: 10px; /* Height of the scrollbar for horizontal scroll */
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted) / 0.5); /* Track color with some transparency */
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--foreground) / 0.3); /* Thumb color */
+    border-radius: 10px;
+    border: 2px solid transparent; /* Creates padding around thumb */
+    background-clip: content-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.6); /* Thumb color on hover */
+  }
+  
+  /* For Firefox - more limited styling */
+  * {
+    scrollbar-width: thin; /* "auto" or "thin" */
+    scrollbar-color: hsl(var(--foreground) / 0.3) hsl(var(--muted) / 0.5); /* thumb and track color */
+  }
+
+}
+
+@layer components {
+  .section-padding {
+    @apply px-6 py-16 md:px-12 md:py-24 lg:px-24 lg:py-32;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-12 relative;
+  }
+
+  .section-title::after {
+    content: "";
+    @apply absolute left-0 -bottom-3 h-1 w-24;
+    background-image: var(--gradient-main);
+  }
+  
+  .section-subtitle {
+    @apply text-xl md:text-2xl lg:text-3xl font-medium mb-8 text-accent;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-main);
+  }
+  
+  .button-primary {
+    @apply px-6 py-3 rounded-md text-primary-foreground font-medium transition-all duration-300 hover:opacity-90 hover:scale-105;
+    background-image: var(--gradient-main);
+  }
+
+  .button-secondary {
+    @apply px-6 py-3 rounded-md bg-secondary text-secondary-foreground font-medium transition-all duration-300 hover:opacity-90 hover:scale-105;
+  }
+
+  .button-outline {
+    @apply px-6 py-3 rounded-md border border-border bg-transparent text-foreground font-medium transition-all duration-300 hover:border-primary hover:text-primary;
+  }
+
+  .animate-fade-in {
+    opacity: 0;
+    transform: translateY(2rem); /* 32px, same as translate-y-8 */
+    transition-property: opacity, transform;
+    transition-duration: 700ms;
+    transition-timing-function: ease-out; /* Custom timing or Tailwind's ease-out */
+  }
+
+  .animate-fade-in.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .resize-none {
+    resize: none;
+  }
+}
