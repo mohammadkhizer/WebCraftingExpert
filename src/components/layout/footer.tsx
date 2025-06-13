@@ -186,11 +186,10 @@ export default async function Footer() {
                         <Github size={24} />
                         </Link>
                     )}
-                    {socials?.instagramUrl && socials.instagramUrl !== '#' && (
+                    
                         <Link href="https://www.instagram.com/webcraftingexpert_/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors duration-300" aria-label="Instagram">
                         <Instagram size={24} />
                         </Link>
-                    )}
                  </div>
             )}
              {(!socials?.facebookUrl || socials.facebookUrl === '#') &&
