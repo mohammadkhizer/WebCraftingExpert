@@ -135,7 +135,7 @@ export default async function AboutPage() {
            <div className="grid md:grid-cols-2 gap-12 items-center">
              <div className="hidden md:block relative aspect-video">
                <Image
-                  src="/our_vission.jpg"
+                  src="/our_vission.j"
                   alt={pageContent.visionTitle || "ByteBrusters' Vision"}
                   fill
                   data-ai-hint={pageContent.visionImageAiHint || "future cityscape"}
