@@ -136,7 +136,7 @@ export default async function AboutPage() {
              <div className="hidden md:block relative aspect-video">
                <Image
                   src="/our_vission.jpg"
-                  alt={pageContent.visionTitle || "ByteBrusters' Vision"}
+                  alt={pageContent.visionTitle || "Webcraftingexpert' Vision"}
                   fill
                   data-ai-hint={pageContent.visionImageAiHint || "future cityscape"}
                   className="rounded-lg object-cover shadow-xl"
